@@ -37,7 +37,7 @@ function atualizar() {
 
 proximo.addEventListener("click", () => {
     indice++;
-    
+
     // Se chegou no meio (último clone), volta para o original SEM animação
     if (indice >= cards.length) {
         indice = 0;
@@ -79,40 +79,87 @@ anterior.addEventListener("click", () => {
 
 /* ===== enviarmensagem ===== */
 function mostrarErro(texto, tempoMs = 3500) {
-  const elemento = document.getElementById("ERRORmsg");
-  if (!elemento) return;
+    const elemento = document.getElementById("ERRORmsg");
+    if (!elemento) return;
 
-  elemento.textContent = texto;
-  elemento.classList.remove("show");   // reset pra reativar animação
-  // força reflow para garantir a animação mesmo se for o mesmo texto
-  void elemento.offsetWidth;
-  elemento.classList.add("show");
+    elemento.textContent = texto;
+    elemento.classList.remove("show");   // reset pra reativar animação
+    // força reflow para garantir a animação mesmo se for o mesmo texto
+    void elemento.offsetWidth;
+    elemento.classList.add("show");
 
-  // opcional: foco visual (não rouba foco do usuário)
-  elemento.setAttribute("tabindex", "-1");
-  elemento.focus({ preventScroll: true });
+    // opcional: foco visual (não rouba foco do usuário)
+    elemento.setAttribute("tabindex", "-1");
+    elemento.focus({ preventScroll: true });
 
-  // esconde automaticamente após X ms
-  clearTimeout(elemento._timeoutId);
-  elemento._timeoutId = setTimeout(() => {
-    elemento.classList.remove("show");
-    // remove tabindex se quiser
-    elemento.removeAttribute("tabindex");
-  }, tempoMs);
+    // esconde automaticamente após X ms
+    clearTimeout(elemento._timeoutId);
+    elemento._timeoutId = setTimeout(() => {
+        elemento.classList.remove("show");
+        // remove tabindex se quiser
+        elemento.removeAttribute("tabindex");
+    }, tempoMs);
 }
 
 
 function enviarMensagem() {
-  const elementoErro = document.getElementById("ERRORmsg");
-  const mensagem = document.getElementById("mensagem").value;
+    const elementoErro = document.getElementById("ERRORmsg");
+    const mensagem = document.getElementById("mensagem").value;
 
-  if (mensagem.trim() === "") {
-    mostrarErro("Por favor, escreva seu pedido antes de enviar.");
-    return;
-  }
+    if (mensagem.trim() === "") {
+        mostrarErro("Por favor, escreva seu pedido antes de enviar.");
+        return;
+    }
 
-  const url = `https://wa.me/558193651862?text=${encodeURIComponent(mensagem)}`;
-  window.open(url, "_blank");
-  console.log(mostrarErro)
+    const url = `https://wa.me/558193651862?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+    console.log(mostrarErro)
 }
 
+
+// script aumentar imagem
+
+
+function iniciarLightbox() {
+    const imagens = document.querySelectorAll(".ImgT");
+
+    imagens.forEach(img => {
+        img.addEventListener("click", () => abrirLightbox(img));
+    });
+}
+
+function abrirLightbox(img) {
+    // criar o fundo escuro
+    const fundo = document.createElement("div");
+    fundo.id = "LightboxBG";
+
+    // criar imagem ampliada
+    const imgGrande = document.createElement("img");
+    imgGrande.src = img.src;
+
+    // impedir scroll do site atrás
+    document.body.style.overflow = "hidden";
+
+    // fechar ao clicar fora
+    fundo.addEventListener("click", () => {
+        fundo.remove();
+        document.body.style.overflow = ""; // libera scroll novamente
+    });
+
+    fundo.appendChild(imgGrande);
+    document.body.appendChild(fundo);
+}
+
+document.addEventListener("DOMContentLoaded", iniciarLightbox);
+
+
+// function aumentarImagem() {
+//     const imagens = document.querySelectorAll(".ImgT");
+
+//     imagens.forEach(img => {
+//         img.addEventListener("click", () => {
+//             img.classList.CriarDiv(img) ("aumentar");
+//         });
+//     });
+// }
+document.addEventListener("DOMContentLoaded", aumentarImagem);
