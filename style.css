@@ -200,6 +200,577 @@ body {
     border-radius: 10px;
 }
 
+.preco {
+    font-weight: bold;
+    color: #984161;
+    margin: 5px 0;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: 8px;
+    background: #25d366;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-whatsapp:hover {
+    background: #1ebe5d;
+}
+
+/* ================================
+   SECTION CTA — FUNDO PREMIUM
+=================================== */
+.CTA {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 120px 20px;
+    position: relative;
+    overflow: hidden;
+
+
+    /* fundo inspirado no header (coerência visual) */
+  background: linear-gradient(
+    180deg,
+    #6f2c47 0%,
+    #984161 40%,
+    #c9798a 70%,
+    #fffaf4 100%
+);
+
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    animation: bgMove 10s ease infinite;
+
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+
+}
+
+/* animação do gradiente */
+@keyframes bgMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* ================================
+   BOLHAS DO FUNDO (NOVA VERSÃO)
+=================================== */
+
+.cta-bubbles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.cta-bubbles span {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+        rgba(255,255,255,0.45),
+        rgba(255,255,255,0.10)
+    );
+
+    filter: blur(4px);
+    animation: bubbleUp 10s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+/* gerar várias bolhas (customize se quiser) */
+.cta-bubbles span:nth-child(1) { width:90px; height:90px; left:10%; animation-duration: 11s; }
+.cta-bubbles span:nth-child(2) { width:120px; height:120px; left:70%; animation-duration: 9s; }
+.cta-bubbles span:nth-child(3) { width:50px; height:50px; left:30%; animation-duration: 7s; }
+.cta-bubbles span:nth-child(4) { width:150px; height:150px; left:85%; animation-duration: 13s; }
+.cta-bubbles span:nth-child(5) { width:80px; height:80px; left:50%; animation-duration: 10s; }
+
+/* animação */
+@keyframes bubbleUp {
+    0%   { transform: translateY(80px) scale(0.8); opacity:0.4; }
+    50%  { opacity:1; transform: translateY(-40px) scale(1); }
+    100% { opacity:0; transform: translateY(-160px) scale(1.1); }
+}
+
+
+/* ================================
+   CONTAINER INTERNO (VIDRO PREMIUM)
+=================================== */
+.CTA-Container {
+    max-width: 700px;
+    width: 100%;
+
+    background: rgba(255, 250, 244, 0.55);
+    backdrop-filter: blur(12px);
+
+    padding: 50px 40px;
+    border-radius: 26px;
+
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.28),
+        0 0 22px rgba(255,255,255,0.25) inset;
+
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity:0; transform: translateY(30px); }
+    to   { opacity:1; transform: translateY(0); }
+}
+
+
+.CTA-Container h2 {
+    color: #984161;
+    font-size: 2.4rem;
+    font-weight: 900;
+
+    margin-bottom: 25px;
+
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+
+/* ================================
+   TEXTAREA
+=================================== */
+
+textarea {
+    width: 100%;
+    height: 130px;
+    border-radius: 14px;
+    border: 2px solid #C9798A;
+    padding: 15px;
+    font-size: 1.1rem;
+
+    resize: none;
+    outline: none;
+
+    background: rgba(255,255,255,0.85);
+    transition: 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #984161;
+    box-shadow: 0 0 12px rgba(152,65,97,0.4);
+}
+
+
+/* ================================
+   MENSAGEM DE ERRO
+=================================== */
+#ERRORmsg {
+    color: #c62828;
+    font-weight: 700;
+    margin-top: 10px;
+
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+#ERRORmsg.show {
+    opacity: 1;
+    color: #c62828
+}
+
+
+/* ================================
+   BOTÃO WHATSAPP — PREMIUM
+=================================== */
+.CTA-BTN {
+    width: 100%;
+    margin-top: 25px;
+
+    background: #1ebe5d;
+    color: white;
+    border: none;
+    border-radius: 14px;
+
+    padding: 20px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    transition: 0.25s ease;
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.25),
+        0 0 12px rgba(30,190,93,0.6);
+}
+
+.CTA-BTN:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.3),
+        0 0 18px rgba(30,190,93,0.9);
+}
+
+.CTA-BTN i {
+    font-size: 1.8rem;
+}
+
+/* =====================================
+     SOCIAL SECTION - PREMIUM STYLE
+===================================== */
+.social-section {
+    width: 100%;
+    padding: 80px 20px;
+    margin-top: 0;
+
+    /* Gradiente combinando com a CTA */
+    background: linear-gradient(
+        to bottom,
+        #fffaf4 0%,
+        #f7e3ea 30%,
+        #c9798a 85%,
+        #984161 100%
+    );
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito brillante (já preparado para animação futura) */
+.social-section::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.18),
+        transparent 70%
+    );
+    animation: brilhoMove 12s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes brilhoMove {
+    0% { transform: translate(-40px, -40px); }
+    50% { transform: translate(40px, 40px); }
+    100% { transform: translate(-40px, -40px); }
+}
+
+.social-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.social-container h2 {
+   font-size: 2.6rem;
+    margin-bottom: 50px;
+    color: #ffffff;
+    font-weight: 900;
+
+    /* borda suave escura para contraste */
+    text-shadow:
+        0 0 6px rgba(0,0,0,0.45),
+        0 0 12px rgba(152,65,97,0.4);
+}
+
+
+/* ============== ICONES ============= */
+
+.social-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    width: 150px;
+    padding: 25px 10px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255,255,255,0.2);
+
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+
+    /* Glow leve padrão */
+    box-shadow: 0 0 18px rgba(255,255,255,0.2);
+}
+
+.social-item i {
+    font-size: 3.2rem;
+}
+
+/* cores individuais */
+.social-item.whats i { color: #25D366; }
+.social-item.insta i { color: #E1306C; }
+.social-item.tiktok i { color: #fff; text-shadow: 0 0 8px #00f2ea; }
+
+.social-item span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* HOVER PODEROSO */
+.social-item:hover {
+    transform: translateY(-12px) scale(1.08);
+    box-shadow:
+        0 0 18px rgba(255,255,255,0.4),
+        0 0 30px rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.20);
+}
+
+/* Linha de brilho passando no hover */
+.social-item::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 3px;
+    bottom: 10px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.9),
+        transparent
+    );
+
+    transform: scaleX(0);
+    transition: 0.4s ease;
+}
+
+.social-item:hover::after {
+    transform: scaleX(1);
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7efe7; /* tom bege leve */
+    overflow-x: hidden;
+}
+
+/* ===== BOLHAS DO SITE INTEIRO ===== */
+.bolhas-site {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -3;
+}
+
+.bolha {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(201,121,138,0.22), rgba(201,121,138,0.10));
+    border-radius: 50%;
+    animation: flutuar 18s infinite linear;
+    filter: blur(2px);
+}
+
+@keyframes flutuar {
+    from { transform: translateY(100vh) scale(0.7); }
+    to { transform: translateY(-20vh) scale(1.1); }
+}
+
+/* ===== BOLHAS ESPECIAIS DO HEADER ===== */
+.bolha-header {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.35), rgba(255,255,255,0.15));
+    animation: pulsar 8s infinite ease-in-out;
+    filter: blur(1px);
+}
+
+.b1 { width: 160px; height: 160px; top: 10%; left: 8%; }
+.b2 { width: 120px; height: 120px; top: 35%; right: 10%; }
+.b3 { width: 90px; height: 90px; bottom: 15%; left: 20%; }
+
+@keyframes pulsar {
+    0%,100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.15); opacity: 0.9; }
+}
+
+/* ===== HEADER ===== */
+.header {
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #984161, #C9798A);
+    color: white;
+}
+
+.header img {
+    max-width: 220px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+
+.catalogo,
+.pedido {
+    background: #fff;
+    color: #000000;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+/* ===== CARROSSEL ===== */
+.carrosel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.carrosel-faixa {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    transition: transform 0.45s ease;
+}
+
+
+
+
+.card {
+    min-width: 240px;
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(152,65,97,0.12);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.seta {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    border: none;
+    background: #984161;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.4rem;
+    z-index: 10;
+}
+
+.anterior { left: -10px; }
+.proximo { right: -10px; }
+
+.seta:hover {
+    transform: translateY(-50%) scale(1.12);
+}
+
+/* ===== CARDS DA MAIN ===== */
+.card-base {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    width: 85%;
+    margin: 30px auto;
+    box-shadow: 0 8px 20px rgba(152,65,97,0.10);
+}
+
+.card-base h2 {
+    color: #984161;
+    margin-bottom: 12px;
+}
+
+/* ===== PRODUTOS ===== */
+.produtos {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.produtos-grid {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.produto-card {
+    width: 150px;
+    background: rgba(255,255,255,0.6);
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(152,65,97,0.12);
+    text-align: center;
+}
+
+.produto-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 /* ====== Lightbox (imagem grande) ====== */
 #LightboxBG {
     position: fixed;

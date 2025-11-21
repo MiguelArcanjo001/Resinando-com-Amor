@@ -37,7 +37,6 @@ function atualizar() {
 
 proximo.addEventListener("click", () => {
     indice++;
-
     // Se chegou no meio (último clone), volta para o original SEM animação
     if (indice >= cards.length) {
         indice = 0;
