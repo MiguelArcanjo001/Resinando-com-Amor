@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resinando com Amor</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== BOLHAS DO SITE ===== -->
+    <div class="bolhas-site"></div>
+
+    <header class="header">
+
+        <!-- BOLHAS DO HEADER -->
+        <div class="bolha-header b1"></div>
+        <div class="bolha-header b2"></div>
+        <div class="bolha-header b3"></div>
+
+        <img src="images/RESINANDO COM AMOR.jpeg" alt="Logo da loja Resinando com Amor">
+
+        <h1>Emily - Resinando com amor</h1>
+        <h2>Peças artesanais feitas à mão, com carinho em cada detalhe.</h2>
+
+        <div class="botoes">
+            <a class="catalogo" href="#products">Ver catálogo</a>
+             <a class = "pedido"href="#CTA-SEC">Faça sua encomenda personalizada</a>
+        </div>
+
+    </header>
+
+    <!-- BOLHAS DA MAIN -->
+    <div class="bolhas-main"></div>
+
+    <main>
+
+        <!-- ================= CARROSSEL ================= -->
+        <section class="carrosel">
+    <button class="seta anterior">&#10094;</button>
+
+    <div class="carrosel-faixa">
+        <div class="card"><img src="images/CANETA RESINANDO - Copia.jpeg"><article>Caneta</article></div>
+        <div class="card"><img src="images/LETRA RESINANDO 3.jpeg"><p>Letra</p></div>
+        <div class="card"><img src="images/LETRA RESINANDO 4.jpeg"><p>Inicial</p></div>
+        <div class="card"><img src="images/MARCA PAGINA RESINANDO.jpeg"><p>Marca-página</p></div>
+        <div class="card"><img src="images/CHAVEIRO RESINANDO.jpeg"><p>Chaveiro</p></div>
+        <div class="card"><img src="images/LETRA RESINANDO 2.jpeg"><p>Letra</p></div>
+        <div class="card"><img src="images/DEUS RESINANDO.jpeg"><p>Deus</p></div>
+        <div class="card"><img src="images/MOTINHA RESINANDO.jpeg"><p>Motinha</p></div>
+        <div class="card"><img src="images/CHAPEU RESINANDO.jpeg"><p>Chapéu</p></div>
+    </div>
+
+    <button class="seta proximo">&#10095;</button>
+</section>
+
+
+        <!-- ================= INFO ================= -->
+        <section class="infos card-base">
+            <h2>Sobre nós</h2>
+
+            <h3>Quem sou eu?</h3>
+            <p>Me chamo Emily e amo transformar imaginação em peças de resina únicas.</p>
+
+            <h3>Como as peças são feitas?</h3>
+            <p>Cada peça é feita com carinho, usando materiais de alta qualidade para garantir durabilidade e beleza.</p>
+        </section>
+
+        <!-- ================= VANTAGENS ================= -->
+        <section class="vantagens card-base">
+            <h2>Por que escolher nossas peças?</h2>
+
+            <ul>
+                <li>Feitas à mão com atenção aos detalhes</li>
+                <li>Materiais de alta qualidade</li>
+                <li>Design exclusivo e personalizado</li>
+                <li>Perfeitas para presentes ou decoração</li>
+            </ul>
+        </section>
+
+        <!-- ================= PRODUTOS ================= -->
+        <section class="produtos" id="products">
+            <h2>Nossas Peças</h2>
+
+            <div class="produtos-grid">
+
+                <div class="produto-card">
+                    <img src="images/MARCA PAGINA RESINANDO.jpeg">
+                    <h3>Marca-página Floral</h3>
+                    <p class="preco"></p>
+                  
+                </div>
+
+                <div class="produto-card">
+                    <img src="images/CHAVEIRO RESINANDO.jpeg">
+                    <h3>Chaveiro Personalizado</h3>
+                    <p class="preco"></p>
+                    
+                </div>
+
+                <div class="produto-card">
+                    <img src="images/LETRA RESINANDO 3.jpeg">
+                    <h3>Letra Resina (Inicial)</h3>
+                    <p class="preco"></p>
+                    
+                </div>
+ <div class="produto-card">
+                    <img src="images/LETRA RESINANDO 3.jpeg">
+                    <h3>Letra Resina (Inicial)</h3>
+                    <p class="preco"></p>
+                    
+                </div>
+                 <div class="produto-card">
+                    <img src="images/LETRA RESINANDO 3.jpeg">
+                    <h3>Letra Resina (Inicial)</h3>
+                    <p class="preco"></p>
+                    
+                </div>
+                 <div class="produto-card">
+                    <img src="images/LETRA RESINANDO 3.jpeg">
+                    <h3>Letra Resina (Inicial)</h3>
+                    <p class="preco"></p>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="CTA" id="CTA-SEC">
+    <div class="cta-bubbles"></div>
+<div class="cta-bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+</div>
+    <div class="CTA-Container">
+        <h2>Pronto para encomendar sua peça personalizada?</h2>
+
+        <textarea id="mensagem" cols="30" rows="10"
+        placeholder="digite seu pedido personalizado"></textarea>
+
+        <p id="ERRORmsg" role="alert" aria-live="assertive"></p>
+
+        <button class="CTA-BTN" onclick="enviarMensagem()" type="button">
+            <i class="fa-brands fa-whatsapp iconewpp"></i> ENVIAR SEU PEDIDO
+        </button>
+    </div>
+</section>
+<section class="social-section" id="social">
+    <div class="social-container">
+
+        <h2>Nos siga nas Redes Sociais</h2>
+
+        <div class="social-grid">
+            <a href="https://wa.me/558193651862?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços." class="social-item whats" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+
+            <a href="https://www.instagram.com/emilyresinandocomamor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-item insta" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+            </a >
+
+            <a href="https://www.tiktok.com/@emilyresinandocomamor?is_from_webapp=1&sender_device=pc" class="social-item tiktok" target="_blank">
+                <i class="fa-brands fa-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
